@@ -1,4 +1,4 @@
-"""run as 'python separator.py filename' from terminal where filename is the name/path to a text file. This will print output in the terminal and save the same in a file named as 'ouput.txt'."""
+"""run as 'python separator.py filename' from terminal where filename is the name/path to a text file. This will print output in the terminal and save the same in a file named as 'ouput_filename'."""
 import codecs, collections, sys, unicodedata, string
 
 def splitclusters(s):
@@ -65,7 +65,7 @@ print 'Total number of frequent (>10) distinct letters', tot_freq_letters
 count_sorted_keys = sorted(count, key=count.get, reverse=True)
 
 
-f2 = codecs.open('output.txt','w','utf-8')  # Saves print output to a file output.txt
+f2 = codecs.open('output_'+sys.argv[1],'w','utf-8')  # Saves print output to a file output.txt
 f2.write('Total number of letters \t'+str(tot_letters)+'\n')
 f2.write('Total number of distinct letters \t'+str(len(count))+'\n')
 f2.write('Total number of frequent (>10) distinct letters \t'+str(tot_freq_letters)+'\n')
