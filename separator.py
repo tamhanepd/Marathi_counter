@@ -1,4 +1,4 @@
-"""run as 'python counter.py filename' from terminal where filename is the name/path to a text file."""
+"""run as 'python separator.py filename' from terminal where filename is the name/path to a text file. This will print output in the terminal and save the same in a file named as 'ouput.txt'."""
 import codecs, collections, sys, unicodedata, string
 
 def splitclusters(s):
