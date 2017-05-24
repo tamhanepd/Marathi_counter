@@ -58,14 +58,17 @@ for char in ignore:
         del count[char]
 
 tot_letters = float(sum(count.values()))
+tot_freq_letters = len([i for i in count.values() if i>10]) 
 print 'Total number of letters', tot_letters 
 print 'Total number of distinct letters', len(count)
+print 'Total number of frequent (>10) distinct letters', tot_freq_letters
 count_sorted_keys = sorted(count, key=count.get, reverse=True)
 
 
 f2 = codecs.open('output.txt','w','utf-8')  # Saves print output to a file output.txt
 f2.write('Total number of letters \t'+str(tot_letters)+'\n')
 f2.write('Total number of distinct letters \t'+str(len(count))+'\n')
+f2.write('Total number of frequent (>10) distinct letters \t'+str(tot_freq_letters)+'\n')
 for r in count_sorted_keys:
     #print r, count[r], '{0:.2e}'.format(count[r]/tot_letters)
     print(r +'\t'+str(count[r]) + '\t' + '{0:.2e}'.format(count[r]/tot_letters))
